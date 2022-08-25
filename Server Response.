@@ -1,0 +1,16 @@
+export TOKEN=`curl -d '{"email":"edwinngera@gmail.com","password":"1234"}' -H "Content-Type: application/json" -X POST aa99bcef216ac4178a7f305a49cfc630-922725722.us-east-2.elb.amazonaws.com/auth  | jq -r '.token'`
+
+curl --request GET 'aa99bcef216ac4178a7f305a49cfc630-922725722.us-east-2.elb.amazonaws.com/contents' -H "Authorization: Bearer ${TOKEN}" | jq 
+
+Response
+
+
+curl --request GET 'aa99bcef216ac4178a7f305a49cfc630-922725722.us-east-2.elb.amazonaws.com/contents' -H "Authorization: Bearer ${TOKEN}" | jq 
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    67  100    67    0     0     73      0 --:--:-- --:--:-- --:--:--    73
+{
+  "email": "edwinngera@gmail.com",
+  "exp": 1662649454,
+  "nbf": 1661439854
+}
