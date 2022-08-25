@@ -4,8 +4,13 @@ data:
     - groups:
       - system:bootstrappers
       - system:nodes
-      rolearn: arn:aws:iam::757101550911:role/UdacityFlaskDeployCBKubectlRole
+      rolearn: arn:aws:iam::757101550911:role/eksctl-simple-jwt-api-nodegroup-n-NodeInstanceRole-19UW2HAKFWIZ
       username: system:node:{{EC2PrivateDNSName}}
+    - groups:
+      - system:masters
+      rolearn: arn:aws:iam::757101550911:role/UdacityFlaskDeployCBKubectlRole
+      username: build 
+
 kind: ConfigMap
 metadata:
   creationTimestamp: "2022-08-25T08:54:37Z"
